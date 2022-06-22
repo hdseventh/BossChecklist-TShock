@@ -1,8 +1,8 @@
 # BossChecklist-TShock
 Boss Checklist for TShock.
 
-##Permission
+## Permission
 - `bcheck.use` Permission to use the /bosses command.
 
-##Command
+## Command
 - `/bosses` `Permission Required : bcheck.use`  Main command.
