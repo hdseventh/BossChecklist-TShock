@@ -26,31 +26,32 @@ namespace BossChecklist_TShock
 
         public void bosscheck(CommandArgs args)
         {
-            var killed = "([c/FF0000:Killed])";
-            var alive = "([c/00FF00:Alive])";
+            var killed = "([c/FF0000:Killed] [i/s1:193])";
+            var alive = "([c/00FF00:Alive] [i/s1:29])";
             StringBuilder sb = new StringBuilder();
-            sb.Append("Eye of Cthulu " + (NPC.downedBoss1 ? killed : alive));
-            sb.Append(", King Slime " + (NPC.downedSlimeKing ? killed : alive));
+            sb.Append("Eye of Cthulhu " + (NPC.downedBoss1 ? killed : alive));
+            sb.Append("\nKing Slime " + (NPC.downedSlimeKing ? killed : alive));
             if (WorldGen.crimson)
             {
-                sb.Append(", Brain of Cthulu " + (NPC.downedBoss2 ? killed : alive));
+                sb.Append("\nBrain of Cthulhu " + (NPC.downedBoss2 ? killed : alive));
             }
             else
             {
-                sb.Append(", Eater of World " + (NPC.downedBoss2 ? killed : alive));
+                sb.Append("\nEater of Worlds " + (NPC.downedBoss2 ? killed : alive));
             }
-            sb.Append(", Skeletron " + (NPC.downedBoss3 ? killed : alive));
-            sb.Append(", Wall of Flesh " + (Main.hardMode ? killed : alive));
-            sb.Append(", Queen Slime " + (NPC.downedQueenSlime ? killed : alive));
-            sb.Append(", The Destroyer " + (NPC.downedMechBoss1 ? killed : alive));
-            sb.Append(", The Twins " + (NPC.downedMechBoss2 ? killed : alive));
-            sb.Append(", Skeletron Prime " + (NPC.downedMechBoss3 ? killed : alive));
-            sb.Append(", Duke of Fishron " + (NPC.downedFishron ? killed : alive));
-            sb.Append(", Golem " + (NPC.downedGolemBoss ? killed : alive));
-            sb.Append(", Plantera " + (NPC.downedPlantBoss ? killed : alive));
-            sb.Append(", Empress of Light " + (NPC.downedEmpressOfLight ? killed : alive));
-            sb.Append(", Lunatic Cultist " + (NPC.downedAncientCultist ? killed : alive));
-            sb.Append(", Moon Lord " + (NPC.downedMoonlord ? killed : alive));
+            // Add Queen Bee
+            sb.Append("\nSkeletron " + (NPC.downedBoss3 ? killed : alive));
+            sb.Append("\nWall of Flesh " + (Main.hardMode ? killed : alive));
+            sb.Append("\nQueen Slime " + (NPC.downedQueenSlime ? killed : alive));
+            sb.Append("\nThe Destroyer " + (NPC.downedMechBoss1 ? killed : alive));
+            sb.Append("\nThe Twins " + (NPC.downedMechBoss2 ? killed : alive));
+            sb.Append("\nSkeletron Prime " + (NPC.downedMechBoss3 ? killed : alive));
+            sb.Append("\nDuke Fishron " + (NPC.downedFishron ? killed : alive));
+            sb.Append("\nGolem " + (NPC.downedGolemBoss ? killed : alive));
+            sb.Append("\nPlantera " + (NPC.downedPlantBoss ? killed : alive));
+            sb.Append("\nEmpress of Light " + (NPC.downedEmpressOfLight ? killed : alive));
+            sb.Append("\nLunatic Cultist " + (NPC.downedAncientCultist ? killed : alive));
+            sb.Append("\nMoon Lord " + (NPC.downedMoonlord ? killed : alive));
             args.Player.SendInfoMessage(sb.ToString());
         }
 
